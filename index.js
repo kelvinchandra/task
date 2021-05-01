@@ -90,7 +90,7 @@ async function task2(){
 } 
 
 
-async function task2(num){
+async function task3(num){
     let arr = [];
     let result = 0 
     var i = 1
@@ -126,5 +126,5 @@ async function task2(num){
 }
 
 
-task2(128)
+task3(128)
 
