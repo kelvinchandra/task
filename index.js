@@ -52,4 +52,79 @@ async function task2(){
     });
 } 
 
-task2()
+
+async function task2(){
+    const response = axios
+    .get(
+      "https://gist.githubusercontent.com/Jekiwijaya/0b85de3b9ff551a879896dd78256e9b8/raw/e9d58da5d4df913ad62e6e8dd83c936090ee6ef4/gistfile1.txt"
+    )
+    .then(function (response) {
+        const data = response.data;
+        const mySet1 = new Set(data);
+        let result = '';
+        for(const value of mySet1.values()){
+            result = result + value
+            console.log(`result in progress: ${result}`)
+        }
+        console.log(`result ${result}`)
+    });
+} 
+
+
+
+async function task2(){
+    const response = axios
+    .get(
+      "https://gist.githubusercontent.com/Jekiwijaya/0b85de3b9ff551a879896dd78256e9b8/raw/e9d58da5d4df913ad62e6e8dd83c936090ee6ef4/gistfile1.txt"
+    )
+    .then(function (response) {
+        const data = response.data;
+        const mySet1 = new Set(data);
+        let result = '';
+        for(const value of mySet1.values()){
+            result = result + value
+            console.log(`result in progress: ${result}`)
+        }
+        console.log(`result ${result}`)
+    });
+} 
+
+
+async function task2(num){
+    let arr = [];
+    let result = 0 
+    var i = 1
+    while(i < num){
+
+        for(var j = 1 ; j <= num ; j ++){
+            if(i < j) {
+                console.log(`break`)
+                break;
+            }
+            console.log(`value I: ${i} %  value J ${j}`)
+            if (i % j == 0){
+                let division = i / j;
+                arr.push(j)
+            }
+
+            if (arr.length > 6){
+                console.log(`break2`)
+                arr = []
+                break;
+            }
+        }
+
+   
+        if (arr.length == 6){
+            result = result + 1
+        }
+        arr = []
+        i++;
+    }
+
+    console.log(`result: ${result}`);
+}
+
+
+task2(128)
+
